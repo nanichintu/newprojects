@@ -1,0 +1,94 @@
+// import React from "react";
+
+// const App = () => {
+//   const image =
+//     "https://www.analyticsinsight.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg";
+//   return (
+//     <div className="container">
+//       <div className="navbar">
+//         <a href="#Home">Home</a>
+//         <a href="#Home">About</a>
+//         <a href="#Home">Services</a>
+//         <a href="#Home">Contact</a>
+//       </div>
+//       <img src={image} className="samplepic"/>
+//       <div className="content-titile">
+//         <p>Mobile Responsive</p>
+//         <p>Demo project</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+
+
+
+
+
+
+/* * {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 253, 252);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.navbar {
+  width: 100%;
+  background-color: rgb(5, 17, 94);
+}
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  animation: focus 1s linear normal none;
+}
+.navbar a {
+  display: inline-block;
+  padding: 18px;
+}
+.navbar a:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+@keyframes focus {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 750px) and (min-width: 500px) {
+  .navbar a {
+    text-align: center;
+    display: block;
+  }
+}
+.samplepic {
+  width: 100%;
+  height: 100%;
+  animation: img 2s;
+}
+@keyframes img {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+

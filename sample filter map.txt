@@ -1,0 +1,64 @@
+import TextField from "@mui/material/TextField";
+import React, { useState } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
+
+const App = () => {
+  const [search, setSearch] = useState("");
+  const [sampledata, setSampleData] = useState([
+    {
+      id: 1,
+      name: "organge",
+      price: 150,
+    },
+    {
+      id: 2,
+      name: "Banana",
+      price: 120,
+    },
+    {
+      id: 3,
+      name: "Fruits",
+      price: 120,
+    },
+    {
+      id: 4,
+      name: "Lemon",
+      price: 200,
+    },
+  ]);
+
+  const handleDelete = (id) => {
+    const updatedData = sampledata.filter(item => item.id !== id);
+    setSampleData(updatedData);
+  };
+
+  const filter = sampledata.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div>
+      <center>
+        <TextField
+          label="filter"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <h1>filter map method</h1>
+        <table>
+          <tbody>
+            {filter.map((item, index) => (
+              <tr key={index}>
+                <td>
+                  <p>{item.name} <DeleteIcon sx={{ color: "red" }} onClick={() => handleDelete(item.id)} /></p>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </center>
+    </div>
+  );
+};
+
+export default App;

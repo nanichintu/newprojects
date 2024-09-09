@@ -1,0 +1,45 @@
+Certainly! Here are some commonly used built-in methods in Node.js:
+
+1. **Global Objects:**
+   - `console.log()`: Outputs to the console.
+   - `setTimeout(callback, delay)`: Executes a function after a specified delay.
+   - `setInterval(callback, interval)`: Repeatedly executes a function with a fixed time interval.
+   - `require(module)`: Imports external modules.
+
+2. **File System (`fs` module):**
+   - `fs.readFile(path, encoding, callback)`: Reads a file asynchronously.
+   - `fs.readFileSync(path, encoding)`: Reads a file synchronously.
+   - `fs.writeFile(file, data, callback)`: Writes to a file asynchronously.
+   - `fs.writeFileSync(file, data)`: Writes to a file synchronously.
+
+3. **Path (`path` module):**
+   - `path.join(...paths)`: Joins path segments using the platform-specific separator.
+   - `path.resolve(...paths)`: Resolves absolute path segments.
+
+4. **Events (`events` module):**
+   - `EventEmitter`: Class that helps in creating custom events and handling event listeners.
+
+5. **HTTP (`http` module):**
+   - `http.createServer(callback)`: Creates an HTTP server.
+   - `http.get(options, callback)`: Performs an HTTP GET request.
+
+6. **HTTPS (`https` module):**
+   - `https.createServer(options, callback)`: Creates an HTTPS server.
+
+7. **URL (`url` module):**
+   - `url.parse(urlString)`: Parses a URL into an object.
+   - `url.format(urlObject)`: Formats a URL object into a URL string.
+
+8. **Query String (`querystring` module):**
+   - `querystring.parse(str)`: Parses a query string into an object.
+   - `querystring.stringify(obj)`: Converts an object into a query string.
+
+9. **Buffer:**
+   - `Buffer.from(data)`: Creates a new Buffer object from data.
+   - `Buffer.alloc(size)`: Creates a new zero-filled Buffer of the specified size.
+
+10. **Child Processes (`child_process` module):**
+    - `child_process.spawn(command, args, options)`: Spawns a new process.
+    - `child_process.exec(command, callback)`: Executes a shell command.
+
+These are just a few examples of the built-in methods available in Node.js. Node.js provides a rich ecosystem of modules and libraries that you can use to perform various tasks efficiently. Always refer to the official Node.js documentation for the most up-to-date information and a comprehensive list of available methods and modules.

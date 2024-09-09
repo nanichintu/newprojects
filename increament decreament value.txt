@@ -1,0 +1,13 @@
+import React, { useState } from "react";
+
+function App(){
+  const [value,setValue] = useState(0)
+  return (
+    <div>
+      <h1>increament value {value}</h1>
+      <button onClick={() => setValue(value + 1)}>increment</button>
+      <button onClick={() =>setValue(value - 10)}>Decrement</button>
+    </div>
+    );
+}
+export default App;

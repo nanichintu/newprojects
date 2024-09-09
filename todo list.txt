@@ -1,0 +1,79 @@
+import Button from "@mui/material/Button";
+import React from "react";
+import { useState } from "react";
+import TodoList from "./todos";
+
+const App = () => {
+  const [task, setTask] = useState("");
+  const [todos, setTodos] = useState([]);
+  const Changehandler = (e) => {
+    setTask(e.target.value);
+  };
+  const handlersubmit = (e) => {
+    e.preventDefault();
+    const newTodos = [...todos, task];
+    setTodos(newTodos);
+    setTask("");
+  };
+  const deleteHandler = (indexValue) =>{
+    const newTodos = todos.filter((todo,index) => index !== indexValue);
+    setTodos(newTodos);
+  };
+
+  const Edithandler = (indexValue) =>{
+    const newTodos = todos.filter((todo,index) => index !== indexValue);
+    setTodos(newTodos);
+  };
+
+  return (
+    <div>
+      <form onSubmit={handlersubmit} >
+        <input
+          type="text"
+          placeholder="firstname"
+          value={task}
+          onChange={Changehandler}
+        />
+        &nbsp; &nbsp;
+        <Button type="submit" variant="contained">
+          Add-item
+        </Button>
+      </form>
+      <TodoList todolist={todos} deleteHandler={deleteHandler}  Edithandler={Edithandler} />
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+import React from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
+
+
+const todolist= ({ todolist,deleteHandler,Edithandler }) => {
+  return (
+    <div>
+      {todolist.map((todo, index) => (
+        <div key={index}>
+          <h6>
+            {todo} &nbsp;
+            <DeleteIcon  sx={{color:"red" ,cursor:"pointer"}} onClick={() => deleteHandler(index)}/>
+           
+          </h6>
+        </div>
+      ))}
+   
+    </div>
+  );
+};
+
+export default todolist;
+

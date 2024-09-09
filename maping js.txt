@@ -1,0 +1,10 @@
+//  <script>
+//       const type = ["text", "color", "range", "date"];
+//       const inputtypes = document.getElementsByClassName("table")[0];
+
+//       const mapping = type.map((item) => {
+//         return `
+//           <input type="${item}">${item}</input>`;
+//       });
+//       inputtypes.innerHTML = mapping.join("");
+//     </script> 

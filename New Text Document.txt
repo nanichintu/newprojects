@@ -1,0 +1,30 @@
+import React from "react";
+import "./App";
+import PropTypes from "prop-types";
+
+function App(person) {
+  return (
+    <div>
+      <h1>hello: {person.name}</h1>
+      <h2>hello: {person.age}</h2>
+    </div>
+  );
+}
+
+App.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+}
+
+function sample() {
+  return (
+    <>
+      <App name="world" age={45} />
+    </>
+  );
+ }
+
+ export default sample;
+
+
+   

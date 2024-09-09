@@ -1,0 +1,20 @@
+
+import React from "react";
+
+function App() {
+  const text = ["html", "css", "js", "react", "node", "express"];
+  const filtered = text.filter((text) => text.includes("e"));
+
+  return (
+    <div>
+      <center>
+        <h1>mapping array</h1>
+        {text.map((text) => (
+          <h1 variant="h2">{filtered}</h1>
+        ))}
+      </center>
+    </div>
+  );
+}
+
+export default App;

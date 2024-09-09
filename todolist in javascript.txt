@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List with Delete Functionality</title>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>To-Do List with Delete Functionality</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul> -->
+
+    <script>
+      // function addTask() {
+      //   var taskInput = document.getElementById("taskInput");
+      //   var taskList = document.getElementById("taskList");
+      //   var task = taskInput.value;
+
+      //   if (task !== "") {
+      //     var li = document.createElement("li");
+      //     li.appendChild(document.createTextNode(task));
+
+      //     var deleteButton = document.createElement("button");
+      //     deleteButton.appendChild(document.createTextNode("Delete"));
+      //     deleteButton.onclick = function () {
+      //       taskList.removeChild(li);
+      //     };
+
+      //     li.appendChild(deleteButton);
+      //     taskList.appendChild(li);
+      //     taskInput.value = "";
+      //   }
+      // }
+    
+    </script>
+  </body>
+</html>

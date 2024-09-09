@@ -1,0 +1,75 @@
+// import React, { useState } from "react";
+
+// const RegistrationForm = () => {
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [file, setFile] = useState("");
+//   const [imagePreview, setImagePreview] = useState("");
+//   const [submittedData, setSubmittedData] = useState(null);
+
+//   const handleFileChange = (e) => {
+//     const selectedFile = e.target.files[0];
+//     setFile(selectedFile);
+
+//     const reader = new FileReader();
+//     reader.onload = () => {
+//       setImagePreview(reader.result);
+//     };
+//     reader.readAsDataURL(selectedFile);
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     const data = {
+//       name: name,
+//       email: email,
+//       file: imagePreview,
+//     };
+//     setSubmittedData(data);
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <div>
+//           <label htmlFor="name">Name:</label>
+//           <input
+//             type="text"
+//             id="name"
+//             value={name}
+//             onChange={(e) => setName(e.target.value)}
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="email">Email:</label>
+//           <input
+//             type="email"
+//             id="email"
+//             value={email} 
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//         </div>
+//         <input
+//           type="file"
+//           id="file"
+//           onChange={handleFileChange}
+//         />
+//         <button type="submit">Submit</button>
+//       </form>
+
+//       {submittedData && (
+//         <div>
+//           <h2>Registration Details:</h2>
+//           <p>Name: {submittedData.name}</p>
+//           <p>Email: {submittedData.email}</p>
+//           <div>
+//             <h3>Photo:</h3>
+//             <img src={submittedData.file} alt="Preview" width={50} height={50} />
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default RegistrationForm;

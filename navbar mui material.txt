@@ -1,0 +1,32 @@
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+const Navbar = ({ size }) => {
+  return (
+    <div>
+      <AppBar>
+        <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
+          <Tabs textColor="white" style={{ flex: 1 }}>
+            <Tab label="Home" />
+            <Tab label="About" />
+            <Tab label="Products" />
+            <Tab label="Blogs" />
+            <Tab label="Contact" />
+          </Tabs>
+          <Badge badgeContent={size} color="success" sx={{ cursor: "pointer" }}>
+            <ShoppingCartIcon
+              sx={{ position: "relative", zIndex: -1, float: "left", cursor: "pointer" }}
+            />
+          </Badge>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+};
+
+export default Navbar;

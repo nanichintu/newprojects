@@ -1,0 +1,66 @@
+import React from "react";
+import TableContainer from "@mui/material/TableContainer";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import TableCell from "@mui/material/TableCell";
+import TableBody from "@mui/material/TableBody";
+
+function createData(
+  name,
+  studentName,
+  companyName,
+  joindate,
+  salary,
+  Experiencefresher
+) {
+  return {
+    name,
+    studentName,
+    companyName,
+    joindate,
+    salary,
+    Experiencefresher,
+  };
+}
+const rows = [
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+  createData("dinga", "nanu", "cgs", "15-4-2022", 80000, "Fresher"),
+];
+function basicdetails() {
+  return (
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650, cursor: "pointer" }}>
+        <TableHead>
+          <TableRow>
+            <TableCell align="center">name</TableCell>
+            <TableCell align="center">studentName</TableCell>
+            <TableCell align="center">companyName</TableCell>
+            <TableCell align="center">joindate</TableCell>
+            <TableCell align="center">salary</TableCell>
+            <TableCell align="center">Experience/fresher</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((rows) => (
+            <TableRow key={rows.name}>
+            <TableCell align="center">{rows.name}</TableCell>
+            <TableCell align="center">{rows.studentName}</TableCell>
+            <TableCell align="center">{rows.companyName}</TableCell>
+            <TableCell align="center">{rows.joindate}</TableCell>
+            <TableCell align="center">{rows.salary}</TableCell>
+            <TableCell align="center">{rows.Experiencefresher}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+export default basicdetails;

@@ -1,0 +1,36 @@
+// import React, { useState } from "react";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
+
+// const App = () => {
+//   const [value, setValue] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const onInput = (e) => setValue(e.target.value);
+//   const handlerpassword = (e) => setPassword(e.target.value);
+
+//   return (
+//     <form>
+//       <center>
+//         <TextField
+//           label="username"
+//           value={value}
+//           onInput={onInput}
+//           type="text"
+//           size="small"
+//         />
+//         <TextField
+//           label="username"
+//           value={password}
+//           onInput={handlerpassword}
+//           type="password"
+//           size="small"
+//         />
+//         <Button disabled={!value} variant="contained">
+//           submit
+//         </Button>
+//       </center>
+//     </form>
+//   );
+// };
+// export default App;

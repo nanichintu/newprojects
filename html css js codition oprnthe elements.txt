@@ -1,0 +1,71 @@
+import React, { useState } from "react";
+
+const App = () => {
+  const [drop, setDrop] = useState("");
+
+  const list = ["tags", "attributes", "opentag", "closetag"];
+  const list1 = ["properties", "propertyname", "propertyname"];
+  const list2 = ["strings", "loops", "map", "includes", "filter"];
+
+  const handleDropdownChange = (e) => {
+    setDrop(e.target.value);
+  };
+ 
+  return (
+    <div>
+      <select value={drop} onChange={handleDropdownChange}>
+        <option value="html">html</option>
+        <option value="css">css</option>
+        <option value="javascript">javascript</option>
+      </select>
+      <option>
+        {drop === "html" &&
+          list.map((item) => (
+            <div key={item}>
+              <p>{item}</p>
+            </div>
+          ))}
+      </option>
+      <option>
+        {drop === "css" &&
+          list1.map((item1) => (
+            <div key={item1}>
+              <option>{item1}</option>
+            </div>
+          ))}
+      </option>
+      <option>
+        {drop === "javascript" && list2.map((item2) => <div>{item2}</div>)}
+      </option>
+    </div>
+  );
+};
+
+
+import React, { useState } from 'react';
+import Rating from '@mui/material/Rating';
+import { Stack } from '@mui/material';
+
+const RatingComponent = () => {
+  const [ratingValue, setRatingValue] = useState(0);
+
+  const handleRatingChange = (event, newValue) => {
+    setRatingValue(newValue);
+    
+    console.log('Selected rating:', newValue);
+  };
+
+  return (
+    <Stack> 
+      <Rating
+        name="simple-controlled"
+        value={ratingValue}
+        onChange={handleRatingChange}
+      />
+      </Stack>
+  );
+};
+
+export default RatingComponent;
+
+

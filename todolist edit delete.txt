@@ -1,0 +1,63 @@
+import React, { useState } from "react";
+import Button from "@mui/material/Button";
+
+const TodoList = () => {
+  const [todos, setTodos] = useState([]);
+  const [currentTodo, setCurrentTodo] = useState("");
+  const [editMode, setEditMode] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
+
+  const handleInputChange = (e) => {
+    setCurrentTodo(e.target.value);
+  };
+
+  const addTodo = () => {
+    if (currentTodo !== "") {
+      if (editMode) {
+        const updatedTodos = [...todos];
+        updatedTodos[editIndex] = currentTodo;
+        setTodos(updatedTodos);
+        setEditMode(false);
+        setEditIndex(null);
+      } else {
+        setTodos([...todos, currentTodo]);
+      }
+      setCurrentTodo("");
+    }
+  };
+
+  const editTodo = (index) => {
+    setEditMode(true);
+    setEditIndex(index);
+    setCurrentTodo(todos[index]);
+  };
+
+  const deleteTodo = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos.splice(index, 1);
+    setTodos(updatedTodos);
+  };
+
+  return (
+    <div>
+      <h1>To-Do List</h1>
+      <input type="text" value={currentTodo} onChange={handleInputChange} />
+      <button onClick={addTodo}>{editMode ? "Update" : "Add"}</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <Button variant="contained" onClick={() => editTodo(index)}>
+              Edit
+            </Button>
+            <Button variant="contained" onClick={() => deleteTodo(index)}>
+              Delete
+            </Button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TodoList;

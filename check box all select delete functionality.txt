@@ -1,0 +1,95 @@
+import React, { useState } from "react";
+
+const App = () => {
+  const [tabledata, setTableData] = useState([
+    {
+      id: 1,
+      name: "sravan",
+      place: "hyderabad",
+      role: "developer",
+      isChecked: false, 
+    },
+    {
+      id: 2,
+      name: "anil",
+      place: "hyderabad",
+      role: "developer & testing",
+      isChecked: false,
+    },
+    {
+      id: 3,
+      name: "nanikanna",
+      place: "hyderabad",
+      role: "AWS developer",
+      isChecked: false,
+    },
+  ]);
+
+  const [selectAll, setSelectAll] = useState(false); 
+
+  const handlerDelete = (id) => {
+    const updatedData = tabledata.filter((item) => item.id !== id);
+    setTableData(updatedData);
+  };
+
+  const handleSelectAll = () => {
+    const updatedTableData = tabledata.map((item) => ({
+      ...item,
+      isChecked: !selectAll,
+    }));
+    setTableData(updatedTableData);
+    setSelectAll(!selectAll);
+  };
+
+  return (
+    <React.Fragment>
+      <center>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <input
+                  type="checkbox"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
+              </th>
+              <th>Name</th>
+              <th>Place</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tabledata.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={item.isChecked}
+                    onChange={() => {
+                      const updatedTableData = tabledata.map((data) =>
+                        data.id === item.id
+                          ? { ...data, isChecked: !data.isChecked }
+                          : data
+                      );
+                      setTableData(updatedTableData);
+                    }}
+                  />
+                </td>
+                <td>{item.name}</td>
+                <td>{item.place}</td>
+                <td>{item.role}</td>
+                <td>
+                  <button onClick={() => handlerDelete(item.id)}>delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </center>
+    </React.Fragment>
+  );
+};
+
+export default App;

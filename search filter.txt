@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+
+const App = () => {
+  const [search, setSearch] = useState("");
+
+  const data = [
+    {
+      id: 1,
+      name: "sravan",
+    },
+    {
+      id: 2,
+      name: "nani",
+    },
+    {
+      id: 3,
+      name: "kumar",
+    },
+  ];
+
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div>
+      <center>
+        <p>filter map</p>
+        <TextField
+          label="search"
+          variant="outlined"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {filteredData.map((data) => (
+          <div key={data.id}>
+            <p variant="text">{data.name}</p>
+          </div>
+        ))}
+      </center>
+    </div>
+  );
+};
+
+export default App;

@@ -1,0 +1,30 @@
+import React from "react";
+
+function App() {
+  const dropdown = [
+    {
+      label: "sravan", value: "sravan" 
+    },
+    {
+      label: "kumar", value: "kumar" 
+    },
+  ];
+
+  
+  return (
+    <div>
+      <center>
+        <h1>React Dropdown Component</h1>
+        <select>
+          <option>select option</option>
+        {
+        dropdown.map((dropdown,index) => (
+          <option key={index} value={dropdown.value}>{dropdown.label}</option>
+        )
+        )}
+        </select>
+      </center>
+    </div>
+  );
+}
+export default App;

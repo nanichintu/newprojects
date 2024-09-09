@@ -1,0 +1,50 @@
+import React, { useState } from "react";
+import Alert from "@mui/material/Alert";
+
+
+const App = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    setOpen(e.target.checked);
+  };
+
+  return (
+    <div>
+      <input type="checkbox" checked={open} onChange={handleCheckboxChange} />
+      <div className="snackbar ">
+        {open && (
+          <Alert severity="success">
+            This is a success alert — check it out!
+          </Alert>
+        )}
+        <p className="demo">hello world</p>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+* {
+  margin: 0;
+  padding: 0;
+}
+.snackbar {
+  width: 350px;
+  height: 25px;
+}
+
+.snackbar.show {
+  opacity: 1;
+}
+.demo {
+  animation: demo 0.6s linear forwards;
+}
+@keyframes demo {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}

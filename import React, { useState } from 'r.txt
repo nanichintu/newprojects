@@ -1,0 +1,25 @@
+// import React, { useState } from 'react';
+// import Rating from '@mui/material/Rating';
+// import Grid from '@mui/material/Grid';
+
+// export default function BasicRating() {
+//   const [value, setValue] = useState(0);
+
+//   const handleRatingChange = (newValue) => {
+//     console.log('Rating value:', newValue);
+//     setValue(newValue);
+//   };
+
+//   return (
+//       <Grid container spacing={2}>
+//         <Grid item xs={12}>
+//           <Rating
+//             name="no-value"
+//             value={value}
+//             onChange={(event, newValue) => handleRatingChange(newValue)}
+//           />
+//         </Grid>
+//       </Grid>
+   
+//   );
+// }

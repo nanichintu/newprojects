@@ -1,0 +1,93 @@
+// import React, { useState } from "react";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
+
+// const App = () => {
+//   const [value, setValue] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const onInput = (e) => setValue(e.target.value);
+//   const handlerpassword = (e) => setPassword(e.target.value);
+
+//   return (
+//     <form>
+//       <center>
+//         <TextField
+//           label="username"
+//           value={value}
+//           onInput={onInput}
+//           type="text"
+//           size="small"
+//         />
+//         <TextField
+//           label="username"
+//           value={password}
+//           onInput={handlerpassword}
+//           type="password"
+//           size="small"
+//         />
+//         <Button disabled={!value} variant="contained">
+//           submit
+//         </Button>
+//       </center>
+//     </form>
+//   );
+// };
+// export default App;
+import React, { useState } from "react";
+import { Button, TextField, Typography } from "@mui/material";
+
+const FileInput = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file && file.type === "application/pdf") {
+      setSelectedFile(file);
+      setErrorMessage("");
+    } else {
+      setSelectedFile(null);
+      setErrorMessage("Please select a PDF file.");
+    }
+  };
+
+  const handleFileUpload = () => {
+    // You can handle the file upload logic here
+    if (selectedFile) {
+      console.log("Uploading file:", selectedFile);
+      // Perform the file upload operation
+    }
+  };
+
+  return (
+    <div>
+      <input
+        accept="application/pdf"
+        style={{ display: "none" }}
+        id="file-upload"
+        type="file"
+        onChange={handleFileChange}
+      />
+      <label htmlFor="file-upload">
+        <Button variant="contained" component="span">
+          Choose File
+        </Button>
+      </label>
+      <Typography variant="body1" color="error">
+        {errorMessage}
+      </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        disabled={!selectedFile}
+        onClick={handleFileUpload}
+      >
+        Upload
+      </Button>
+      <TextField type="file" label="upload file"/>
+    </div>
+  );
+};
+
+export default FileInput;
